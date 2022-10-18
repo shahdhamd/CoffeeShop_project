@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="n.css">
+    <title>crud</title>
+</head>
+<body>
+    <div class="header">
+        <div class="head_text">
+            <h2>COFFE SHOP</h2>
+            <P>COFFEE SHOP MANAGMENGT SYSTEM</P>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+          
+                
+                    <div class="title">
+
+                    
+                    <input type="text" placeholder="title" id="title">
+                </div>
+                    <div class="price">
+                        <input type="number" onkeyup="gettotal()" placeholder="price"id="price">
+                        <input type="number"  onkeyup="gettotal()"   placeholder="taxes" id="taxes">
+                        <input type="number"   onkeyup="gettotal()"    placeholder="ads" id="ads">
+                        <input type="number"    onkeyup="gettotal()"        placeholder="discount" id="discount">
+                       <small id="total"></small>
+                    </div>
+                    <div class="count">
+                        
+                    <input type="number" placeholder="count" id="count">
+                </div>
+                <div class="catogory">
+                    <input type="text" placeholder="catogory" id="catogory">
+                </div>
+                <div class="creat">
+                    <button id="click">Create</button>
+                </div>
+                <div class="search7">
+                <div class="search">
+                    <input type="search"  onkeyup="searchdata(this.value)"  placeholder="search" id="search">
+                </div>
+                <div class="searchtitle">
+                    <div class="row">
+                        <div class="col-6">
+                    <button onclick="getsearch(this.id)" id="searchtitle">Search by Tile</button>
+                </div>
+                <div class="col-6">
+                    <button  onclick="getsearch(this.id)" id="searchcat" >Search by Catogory</button>
+                </div>
+                </div>
+            </div>
+        </div>
+              
+                
+<div id="deletall">
+
+</div>
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TITLE</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">TAXES</th>
+            <th scope="col">ADS </th>
+            <th scope="col">DISCOUNT </th>
+            <th scope="col">TOTLA </th> 
+            <th scope="col">CATEGORY </th>
+            <th scope="col">UPDATE </th>
+            <th scope="col">DELET </th>
+
+          </tr>
+        </thead>
+        <tbody id="data">
+          
+        </tbody >
+      </table>
+    </div>
+    <script src="m.js"></script>
+</body>
+</html>
