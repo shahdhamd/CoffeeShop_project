@@ -57,3 +57,77 @@ $(".nav-link").click(function(e){
  let secof=$(tar).offset().top;
  $('html','body').animate({scrollTop : secof},400)
 })
+
+
+ var demo=document.getElementById('demo');
+
+  var mypost1=[];
+  var mypost2=[];
+  var mypost3=[];
+  let httpReq=new XMLHttpRequest();
+  create1();
+  async function create1(){
+    let respose=await fetch('https://forkify-api.herokuapp.com/api/search?q=blackberry');
+    let data=await respose.json();
+    mypost1=data.recipes;
+    
+    create2();
+  }
+  
+  async function create2(){
+    let respose1=await fetch('https://forkify-api.herokuapp.com/api/search?q=lemon');
+    let data1=await respose1.json();
+    mypost2=data1.recipes;
+    create3();
+  }
+  async function create3(){
+    let respose2=await fetch('https://forkify-api.herokuapp.com/api/search?q=broccoli');
+    let data2=await respose2.json();
+    mypost3=data2.recipes;
+    display();
+  }
+  
+  
+  
+  function display(){
+    console.log(mypost1[1].title);
+    var test='';
+    for(var i=0;i<4;i++){
+      {
+        
+      test+=`<div class="col-md-4  text-center">
+      <div class="d-flex p-3">
+          <div class="me-3 div-img "><img src=${mypost1[i].image_url} class="Menu-img" width="83px" height="83px" /></div>
+          <ul class="list-unstyled ">
+              <li class="content">${mypost1[i].title}</li>
+              <li class="content">$${mypost1[i].social_rank}</li>
+          </ul>
+          
+      </div>
+      <div class="text-secondary">---------------------------------</div></div>
+      <div class="col-md-4  text-center">
+      <div class="d-flex p-3">
+          <div class="me-3 div-img "><img src=${mypost2[i].image_url} class="Menu-img" width="83px" height="83px" /></div>
+          <ul class="list-unstyled">
+              <li class="content">${mypost2[i].title}</li>
+              <li class="content">$${mypost2[i].social_rank}</li>
+          </ul>
+      </div>
+      <div class="text-secondary">---------------------------------</div>
+      </div>
+  
+  </div>
+  <div class="col-md-4  text-center">
+      <div class="d-flex p-3">
+          <div class="me-3 div-img "><img class="Menu-img" src=${mypost3[i].image_url} width="83px" height="83px" /></div>
+          <ul class="list-unstyled">
+          <li class="content">${mypost3[i].title}</li>
+          <li class="content">$${mypost3[i].social_rank}</li>
+      </ul>
+      </div>
+      <div class="text-secondary">--------------------------------</div>
+  </div>`
+    }}
+    demo.innerHTML=test;
+  }
+  
