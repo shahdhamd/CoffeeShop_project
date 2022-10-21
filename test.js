@@ -9,11 +9,11 @@ logbut.addEventListener("click",function(){
 
 
 item.addEventListener("click",function(){
-    location.replace("index2.html")
+    location.replace("index.html")
 })
 let link1=document.getElementById("link1");
 link1.addEventListener("click",function(){
-    location.replace("index.html")
+    location.replace("index2.html")
 })
 
 
